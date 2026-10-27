@@ -2505,6 +2505,11 @@ function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replac
 </body>
 <script>
 if('serviceWorker' in navigator){
+  // Unregister any old broken service workers immediately
+  navigator.serviceWorker.getRegistrations().then(function(regs){
+    regs.forEach(function(r){ r.unregister(); });
+  });
+  // Register the fixed SW after unregistering old ones
   window.addEventListener('load',function(){
     navigator.serviceWorker.register('/sw.js');
   });
