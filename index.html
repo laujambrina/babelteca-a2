@@ -7,6 +7,13 @@
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Babelteca · EOI Zamora · A2</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1e3a8f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Babelteca">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <style>
 :root{
   --azul:#1e3a8f;--azul2:#1d4ed8;--azul-light:#eff6ff;
@@ -2496,4 +2503,11 @@ function _finishLF(){
 function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 </script>
 </body>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('/sw.js');
+  });
+}
+</script>
 </html>
