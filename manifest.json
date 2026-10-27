@@ -1,0 +1,24 @@
+{
+  "name": "Babelteca A2 · EOI Zamora",
+  "short_name": "Babelteca",
+  "description": "Práctica oral y escrita de inglés A2 · EOI Zamora",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eff6ff",
+  "theme_color": "#1e3a8f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
