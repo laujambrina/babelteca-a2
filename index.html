@@ -1158,7 +1158,7 @@ async function callClaude(msgs,system){
   if(!ANTHROPIC_KEY){/* modal disabled */throw new Error("no-key");}
   var r=await fetch("https://api.anthropic.com/v1/messages",{
     method:"POST",
-    headers:{"Content-Type":"application/json","x-api-key":ANTHROPIC_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+    headers:{"Content-Type":"application/json","x-api-key":ANTHROPIC_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true","anthropic-workspace-id":"wrkspc_01RQJHZQuxkpJccXXZbAoD7i"},
     body:JSON.stringify({model:"claude-sonnet-4-5",max_tokens:1200,system:system,messages:msgs})
   });
   var d=await r.json();
@@ -1805,7 +1805,7 @@ async function corregir(){
   try{
     var r=await fetch("https://api.anthropic.com/v1/messages",{
       method:"POST",
-      headers:{"Content-Type":"application/json","x-api-key":ANTHROPIC_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      headers:{"Content-Type":"application/json","x-api-key":ANTHROPIC_KEY,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true","anthropic-workspace-id":"wrkspc_01RQJHZQuxkpJccXXZbAoD7i"},
       body:JSON.stringify({model:"claude-sonnet-4-5",max_tokens:2000,system:system,messages:[{role:"user",content:"Student's text:\n\n"+text}]})
     });
     var data=await r.json();
