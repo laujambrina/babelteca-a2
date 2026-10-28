@@ -1236,9 +1236,10 @@ function renderLangFuncGrid(){
       var b=document.createElement("button");
       b.className="topic-card";
       b.style.borderColor="#a5f3fc";
+      var desc=lv.free?'Práctica libre oral y escrita':(lv.items.length+' ejercicios de corrección');
       b.innerHTML='<span class="tc-icon">'+lv.icon+'</span>'
         +'<div class="tc-type" style="color:#0891b2">'+fn.title+'</div>'
-        +'<h3>'+lv.title+'</h3><p>'+lv.items.length+' ejercicios de corrección</p>';
+        +'<h3>'+lv.title+'</h3><p>'+desc+'</p>';
       b.onmouseenter=function(){b.style.borderColor="#0891b2";};
       b.onmouseleave=function(){b.style.borderColor="#a5f3fc";};
       b.onclick=function(){goToLangFunc(fn.id,lv.id);};
